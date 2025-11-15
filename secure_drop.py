@@ -2,6 +2,7 @@
 
 import os
 from user_registration import register_user
+from user_login import user_login
 
 def main():
     if not os.path.exists("users.json") or os.stat("users.json").st_size == 0:
@@ -10,8 +11,7 @@ def main():
         if choice == 'y':
             register_user()
         return
-
-    print("User already registered. Proceed to login module (M2).")
+    user_login()
 
 if __name__ == "__main__":
     main()
